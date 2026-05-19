@@ -1,4 +1,4 @@
-const LEAD_API_URL = 'http://localhost:8080/api/leads/integration';
+const LEAD_API_URL = 'https://api.raunirp.com/api/leads/integration';
 
 function getEndpoint(source) {
     const endpoints = {
@@ -33,7 +33,7 @@ async function submitForm(form, source) {
     const formData = collectFormData(form);
     const endpoint = getEndpoint(source);
     const messageDiv = form.querySelector('.success-message, .error-message') || createMessageDiv(form);
-    
+
     try {
         const response = await fetch(`${LEAD_API_URL}/${endpoint}`, {
             method: 'POST',
@@ -62,10 +62,10 @@ function createMessageDiv(form) {
     return div;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const facebookForm = document.getElementById('facebookForm');
     if (facebookForm) {
-        facebookForm.addEventListener('submit', function(e) {
+        facebookForm.addEventListener('submit', function (e) {
             e.preventDefault();
             submitForm(facebookForm, 'facebook');
         });
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const instagramForm = document.getElementById('instagramForm');
     if (instagramForm) {
-        instagramForm.addEventListener('submit', function(e) {
+        instagramForm.addEventListener('submit', function (e) {
             e.preventDefault();
             submitForm(instagramForm, 'instagram');
         });
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const websiteForm = document.getElementById('websiteForm');
     if (websiteForm) {
-        websiteForm.addEventListener('submit', function(e) {
+        websiteForm.addEventListener('submit', function (e) {
             e.preventDefault();
             submitForm(websiteForm, 'website');
         });
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const googleForm = document.getElementById('googleForm');
     if (googleForm) {
-        googleForm.addEventListener('submit', function(e) {
+        googleForm.addEventListener('submit', function (e) {
             e.preventDefault();
             submitForm(googleForm, 'google');
         });
