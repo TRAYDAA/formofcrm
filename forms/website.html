@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Lead Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../registration-form/logo.png">
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1 class="form-title">INQUIRY FORM</h1>
+            <img src="../registration-form/logo.png" class="brand-logo" alt="Raffles University Logo">
+        </div>
+        <form id="websiteForm">
+            <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <div class="input-with-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="e.g. John Doe" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <div class="input-with-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Primary Phone <span class="required">*</span></label>
+                <div class="input-with-icon">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="phone" name="phone" placeholder="10-digit number" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="alternatePhone">Alternate Phone</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-phone-alt"></i>
+                    <input type="tel" id="alternatePhone" name="alternatePhone" placeholder="Optional">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="course">Course Interest <span class="required">*</span></label>
+                <div class="input-with-icon">
+                    <i class="fas fa-book"></i>
+                    <select id="course" name="course" required>
+                        <option value="">Select Course</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn">Submit via Website</button>
+            <div class="success-message"></div>
+            <div class="error-message"></div>
+        </form>
+    </div>
+    <script src="forms.js"></script>
+</body>
+
+</html>
