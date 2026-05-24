@@ -4,22 +4,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Registration Form — Raffles University</title>
-    <meta name="description"
-        content="Student Registration Application Form for Raffles University. Apply for UG, PG, PhD, and Diploma programs.">
-    <link rel="stylesheet" href="registration-style.css">
-    <link rel="icon" href="./logo.png">
+    <title>Application Form — Raffles University</title>
+    <meta name="description" content="Student Registration Application Form for Raffles University. Apply for UG, PG, PhD, and Diploma programs.">
+    <link rel="stylesheet" href="registration-form.css" />
 </head>
 
 <body>
     <main class="container">
         <!-- Brand Header -->
         <header class="brand">
+            <img src="logo.png" alt="Raffles University logo" class="logo">
             <h1 class="form-title">Student Registration Form</h1>
-
-
-
-
         </header>
 
         <!-- Progress Stepper -->
@@ -72,8 +67,7 @@
 
                     <label class="field">
                         <span class="label-text">Mobile <span class="required">*</span></span>
-                        <input type="tel" name="mobile" id="mobile" pattern="[0-9]{10}" required
-                            placeholder="10-digit number">
+                        <input type="tel" name="mobile" id="mobile" pattern="[0-9]{10}" required placeholder="10-digit number">
                     </label>
 
                     <label class="field">
@@ -96,16 +90,14 @@
                         <span class="label-text">School <span class="required">*</span></span>
                         <select name="school" id="school-select" required>
                             <option value="">Select School</option>
-                            <option value="SCHOOL OF ENGINEERING & TECHNOLOGY">SCHOOL OF ENGINEERING & TECHNOLOGY
-                            </option>
-                            <option value="SCHOOL OF LAW">SCHOOL OF LAW</option>
-                            <option value="SCHOOL OF BASIC& APPLIED SCIENCES">SCHOOL OF BASIC& APPLIED SCIENCES</option>
-                            <option value="SCHOOL OF AGRICULTURAL SCIENCES">SCHOOL OF AGRICULTURAL SCIENCES</option>
-                            <option value="ALABBAR SCHOOL OF MANAGEMENT">ALABBAR SCHOOL OF MANAGEMENT</option>
-                            <option value="SCHOOL OF PHARMACY">SCHOOL OF PHARMACY</option>
-                            <option value="SCHOOL OF HUMINITIES & SOCIAL SCIENCES">SCHOOL OF HUMINITIES & SOCIAL
-                                SCIENCES</option>
-                            <option value="MARKETING">MARKETING</option>
+                            <option>SCHOOL OF LAW</option>
+                            <option>SCHOOL OF ENGINEERING &amp; TECHNOLOGY</option>
+                            <option>SCHOOL OF BASIC &amp; APPLIED SCIENCE</option>
+                            <option>SCHOOL OF AGRICULTURAL SCIENCE</option>
+                            <option>ALABBAR SCHOOL OF MANAGEMENT</option>
+                            <option>SCHOOL OF PHARMACY</option>
+                            <option>SCHOOL OF HUMANITIES &amp; SOCIAL SCIENCE</option>
+                            <option>RESEARCH</option>
                         </select>
                     </label>
 
@@ -135,6 +127,11 @@
                         <select name="city" id="city-select" required disabled>
                             <option value="">Select State first</option>
                         </select>
+                    </label>
+
+                    <label class="field" id="reference-field" style="display: none;">
+                        <span class="label-text">Referral Reference Code</span>
+                        <input type="text" name="reference" id="reference" placeholder="Reference Code" readonly style="background-color: #f1f5f9; color: #64748b; font-weight: 500; cursor: not-allowed;">
                     </label>
                 </div>
 
@@ -230,13 +227,11 @@
                     <div class="form-grid">
                         <label class="field">
                             <span class="label-text">Father's Name <span class="required">*</span></span>
-                            <input type="text" name="father_name" id="father_name"
-                                placeholder="Enter father's full name" required>
+                            <input type="text" name="father_name" id="father_name" placeholder="Enter father's full name" required>
                         </label>
                         <label class="field">
                             <span class="label-text">Father's Mobile No</span>
-                            <input type="tel" name="father_mobile" id="father_mobile" placeholder="10-digit number"
-                                pattern="[0-9]{10}">
+                            <input type="tel" name="father_mobile" id="father_mobile" placeholder="10-digit number" pattern="[0-9]{10}">
                         </label>
                         <label class="field">
                             <span class="label-text">Father's Email</span>
@@ -244,8 +239,7 @@
                         </label>
                         <label class="field">
                             <span class="label-text">Father's Aadhar No</span>
-                            <input type="text" name="father_aadhar" id="father_aadhar" placeholder="XXXX XXXX XXXX"
-                                maxlength="14">
+                            <input type="text" name="father_aadhar" id="father_aadhar" placeholder="XXXX XXXX XXXX" maxlength="14">
                         </label>
                     </div>
                 </div>
@@ -256,13 +250,11 @@
                     <div class="form-grid">
                         <label class="field">
                             <span class="label-text">Mother's Name <span class="required">*</span></span>
-                            <input type="text" name="mother_name" id="mother_name"
-                                placeholder="Enter mother's full name" required>
+                            <input type="text" name="mother_name" id="mother_name" placeholder="Enter mother's full name" required>
                         </label>
                         <label class="field">
                             <span class="label-text">Mother's Mobile No</span>
-                            <input type="tel" name="mother_mobile" id="mother_mobile" placeholder="10-digit number"
-                                pattern="[0-9]{10}">
+                            <input type="tel" name="mother_mobile" id="mother_mobile" placeholder="10-digit number" pattern="[0-9]{10}">
                         </label>
                         <label class="field">
                             <span class="label-text">Mother's Email</span>
@@ -270,8 +262,7 @@
                         </label>
                         <label class="field">
                             <span class="label-text">Mother's Aadhar No</span>
-                            <input type="text" name="mother_aadhar" id="mother_aadhar" placeholder="XXXX XXXX XXXX"
-                                maxlength="14">
+                            <input type="text" name="mother_aadhar" id="mother_aadhar" placeholder="XXXX XXXX XXXX" maxlength="14">
                         </label>
                     </div>
                 </div>
@@ -282,23 +273,19 @@
                     <div class="form-grid">
                         <label class="field">
                             <span class="label-text">Guardian's Name</span>
-                            <input type="text" name="guardian_name" id="guardian_name"
-                                placeholder="Enter guardian's full name">
+                            <input type="text" name="guardian_name" id="guardian_name" placeholder="Enter guardian's full name">
                         </label>
                         <label class="field">
                             <span class="label-text">Guardian's Mobile No</span>
-                            <input type="tel" name="guardian_mobile" id="guardian_mobile" placeholder="10-digit number"
-                                pattern="[0-9]{10}">
+                            <input type="tel" name="guardian_mobile" id="guardian_mobile" placeholder="10-digit number" pattern="[0-9]{10}">
                         </label>
                         <label class="field">
                             <span class="label-text">Guardian's Email</span>
-                            <input type="email" name="guardian_email" id="guardian_email"
-                                placeholder="email@example.com">
+                            <input type="email" name="guardian_email" id="guardian_email" placeholder="email@example.com">
                         </label>
                         <label class="field">
                             <span class="label-text">Guardian's Aadhar No</span>
-                            <input type="text" name="guardian_aadhar" id="guardian_aadhar" placeholder="XXXX XXXX XXXX"
-                                maxlength="14">
+                            <input type="text" name="guardian_aadhar" id="guardian_aadhar" placeholder="XXXX XXXX XXXX" maxlength="14">
                         </label>
                     </div>
                 </div>
@@ -309,13 +296,11 @@
                     <div class="form-grid">
                         <label class="field">
                             <span class="label-text">Correspondence Address <span class="required">*</span></span>
-                            <textarea name="correspondence_address" id="correspondence_address"
-                                placeholder="Enter your current mailing address" required></textarea>
+                            <textarea name="correspondence_address" id="correspondence_address" placeholder="Enter your current mailing address" required></textarea>
                         </label>
                         <label class="field">
                             <span class="label-text">Permanent Address <span class="required">*</span></span>
-                            <textarea name="permanent_address" id="permanent_address"
-                                placeholder="Enter your permanent address" required></textarea>
+                            <textarea name="permanent_address" id="permanent_address" placeholder="Enter your permanent address" required></textarea>
                         </label>
                     </div>
                     <label class="checkbox" style="margin-top:10px;">
@@ -350,9 +335,34 @@
 
                 <div class="info-banner">
                     <span class="info-icon">ℹ️</span>
-                    <span>Please upload clear scanned copies of your marksheets in <strong>PDF, JPG, or PNG</strong>
-                        format. Maximum file size: <strong>5 MB</strong> per file.</span>
+                    <span>Please upload clear scanned copies of your marksheets in <strong>PDF, JPG, or PNG</strong> format. Maximum file size: <strong>5 MB</strong> per file.</span>
                 </div>
+
+                <!-- Passport Photo -->
+                <div class="marksheet-card">
+                    <div class="marksheet-card-header">
+                        <div class="marksheet-badge tenth" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">📷</div>
+                        <div>
+                            <h3>Passport Size Photo</h3>
+                            <p>Recent photograph with light background</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <div class="upload-zone" id="upload-zone-photo">
+                            <span class="upload-icon">👤</span>
+                            <h4>Upload Passport Photo</h4>
+                            <p>Drag & drop your photo here, or click to browse</p>
+                            <p style="margin-top:4px;font-size:11px;color:#94a3b8;">JPG, JPEG, PNG — Max 5 MB</p>
+                            <input type="file" name="passport_photo" id="passport_photo" accept=".jpg,.jpeg,.png" onchange="handleFileUpload(this, 'photo')">
+                            <div class="file-name hidden" id="file-name-photo">
+                                ✅ <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spacer -->
+                <div style="height: 28px;"></div>
 
                 <!-- Class 10th -->
                 <div class="marksheet-card">
@@ -388,8 +398,7 @@
                         </label>
                         <label class="field">
                             <span class="label-text">School Name <span class="required">*</span></span>
-                            <input type="text" name="school_10" id="school_10" placeholder="Name of your school"
-                                required>
+                            <input type="text" name="school_10" id="school_10" placeholder="Name of your school" required>
                         </label>
                         <label class="field">
                             <span class="label-text">Roll Number</span>
@@ -397,19 +406,16 @@
                         </label>
                         <label class="field">
                             <span class="label-text">Total Marks / CGPA <span class="required">*</span></span>
-                            <input type="text" name="marks_10" id="marks_10" placeholder="e.g. 450/500 or 9.2 CGPA"
-                                required>
+                            <input type="text" name="marks_10" id="marks_10" placeholder="e.g. 450/500 or 9.2 CGPA" required>
                         </label>
                         <label class="field">
                             <span class="label-text">Percentage <span class="required">*</span></span>
-                            <input type="number" name="percentage_10" id="percentage_10" placeholder="e.g. 90" min="0"
-                                max="100" step="0.01" required>
+                            <input type="number" name="percentage_10" id="percentage_10" placeholder="e.g. 90" min="0" max="100" step="0.01" required>
                         </label>
                     </div>
 
                     <!-- Subject Marks -->
-                    <div class="sub-section"
-                        style="border-top: 1px dashed #e2e8f0; margin-top: 20px; padding-top: 16px;">
+                    <div class="sub-section" style="border-top: 1px dashed #e2e8f0; margin-top: 20px; padding-top: 16px;">
                         <div class="sub-section-title">Subject-wise Marks (10th)</div>
                         <div id="subjects-10-container">
                             <div class="form-grid three-col subject-row">
@@ -427,8 +433,7 @@
                                 </label>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-secondary"
-                            style="margin-top: 12px; font-size:13px; padding:8px 16px;" onclick="addSubjectRow('10')">
+                        <button type="button" class="btn btn-secondary" style="margin-top: 12px; font-size:13px; padding:8px 16px;" onclick="addSubjectRow('10')">
                             + Add Subject
                         </button>
                     </div>
@@ -440,8 +445,7 @@
                             <h4>Upload 10th Marksheet</h4>
                             <p>Drag & drop your file here, or click to browse</p>
                             <p style="margin-top:4px;font-size:11px;color:#94a3b8;">PDF, JPG, PNG — Max 5 MB</p>
-                            <input type="file" name="marksheet_10" id="marksheet_10" accept=".pdf,.jpg,.jpeg,.png"
-                                onchange="handleFileUpload(this, '10')">
+                            <input type="file" name="marksheet_10" id="marksheet_10" accept=".pdf,.jpg,.jpeg,.png" onchange="handleFileUpload(this, '10')">
                             <div class="file-name hidden" id="file-name-10">
                                 ✅ <span></span>
                             </div>
@@ -486,8 +490,7 @@
                         </label>
                         <label class="field">
                             <span class="label-text">School Name <span class="required">*</span></span>
-                            <input type="text" name="school_12" id="school_12" placeholder="Name of your school"
-                                required>
+                            <input type="text" name="school_12" id="school_12" placeholder="Name of your school" required>
                         </label>
                         <label class="field">
                             <span class="label-text">Roll Number</span>
@@ -507,19 +510,16 @@
                         </label>
                         <label class="field">
                             <span class="label-text">Percentage <span class="required">*</span></span>
-                            <input type="number" name="percentage_12" id="percentage_12" placeholder="e.g. 85" min="0"
-                                max="100" step="0.01" required>
+                            <input type="number" name="percentage_12" id="percentage_12" placeholder="e.g. 85" min="0" max="100" step="0.01" required>
                         </label>
                         <label class="field">
                             <span class="label-text">Total Marks / CGPA <span class="required">*</span></span>
-                            <input type="text" name="marks_12" id="marks_12" placeholder="e.g. 420/500 or 8.8 CGPA"
-                                required>
+                            <input type="text" name="marks_12" id="marks_12" placeholder="e.g. 420/500 or 8.8 CGPA" required>
                         </label>
                     </div>
 
                     <!-- Subject Marks -->
-                    <div class="sub-section"
-                        style="border-top: 1px dashed #e2e8f0; margin-top: 20px; padding-top: 16px;">
+                    <div class="sub-section" style="border-top: 1px dashed #e2e8f0; margin-top: 20px; padding-top: 16px;">
                         <div class="sub-section-title">Subject-wise Marks (12th)</div>
                         <div id="subjects-12-container">
                             <div class="form-grid three-col subject-row">
@@ -537,8 +537,7 @@
                                 </label>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-secondary"
-                            style="margin-top: 12px; font-size:13px; padding:8px 16px;" onclick="addSubjectRow('12')">
+                        <button type="button" class="btn btn-secondary" style="margin-top: 12px; font-size:13px; padding:8px 16px;" onclick="addSubjectRow('12')">
                             + Add Subject
                         </button>
                     </div>
@@ -550,8 +549,7 @@
                             <h4>Upload 12th Marksheet</h4>
                             <p>Drag & drop your file here, or click to browse</p>
                             <p style="margin-top:4px;font-size:11px;color:#94a3b8;">PDF, JPG, PNG — Max 5 MB</p>
-                            <input type="file" name="marksheet_12" id="marksheet_12" accept=".pdf,.jpg,.jpeg,.png"
-                                onchange="handleFileUpload(this, '12')">
+                            <input type="file" name="marksheet_12" id="marksheet_12" accept=".pdf,.jpg,.jpeg,.png" onchange="handleFileUpload(this, '12')">
                             <div class="file-name hidden" id="file-name-12">
                                 ✅ <span></span>
                             </div>
@@ -577,8 +575,7 @@
             <div class="success-screen" id="success-screen">
                 <div class="success-checkmark">✓</div>
                 <h2>Application Submitted Successfully!</h2>
-                <p>Thank you for applying to Raffles University. Your application has been received. We will contact you
-                    shortly via email and phone.</p>
+                <p>Thank you for applying to Raffles University. Your application has been received. We will contact you shortly via email and phone.</p>
                 <br>
                 <button type="button" class="btn btn-primary" onclick="location.reload()" style="margin-top:16px;">
                     ← Submit Another Application
@@ -589,12 +586,16 @@
     </main>
 
     <script>
+        /* ── Extract ref parameter from URL ── */
+        const urlParams = new URLSearchParams(window.location.search);
+        const refParam = urlParams.get('ref');
+
         /* ── Element References ── */
-        const countrySelect = document.getElementById('country-select');
-        const stateSelect = document.getElementById('state-select');
-        const citySelect = document.getElementById('city-select');
-        const schoolSelect = document.getElementById('school-select');
-        const courseSelect = document.getElementById('course-select');
+        const countrySelect  = document.getElementById('country-select');
+        const stateSelect    = document.getElementById('state-select');
+        const citySelect     = document.getElementById('city-select');
+        const schoolSelect   = document.getElementById('school-select');
+        const courseSelect   = document.getElementById('course-select');
 
         /* ── School → Courses Map ── */
         const schoolCoursesMap = {
@@ -611,29 +612,25 @@
                 "Master of Computer Applications (MCA)", "Diploma",
                 "Ph.D in CSE, EE, ECE & ME"
             ],
-            "SCHOOL OF BASIC& APPLIED SCIENCES": [
+            "SCHOOL OF BASIC & APPLIED SCIENCE": [
                 "B.Sc. ( PCM, CBZ, MPCs )",
                 "M.Sc.(Physics, Chemistry, Zoology, Botany and Mathematics)",
                 "Ph.D.(Physics, Chemistry, Zoology, Botany and Mathematics)"
             ],
-            "SCHOOL OF AGRICULTURAL SCIENCES": [
+            "SCHOOL OF AGRICULTURAL SCIENCE": [
                 "B.Sc. Agriculture (Hons.)"
             ],
             "SCHOOL OF PHARMACY": [
                 "D.Pharm", "B.Pharm", "M.Pharm (Pharmaceutics)", "Ph.D. in Pharmacy"
             ],
-            "SCHOOL OF HUMINITIES & SOCIAL SCIENCES": [
+            "SCHOOL OF HUMANITIES & SOCIAL SCIENCE": [
                 "B.A. (General - Any Three Subjects)",
                 "M.A. in English, Economics, Sociology and Political Science",
                 "Ph.D in English, Economics, Sociology, Political Science, Psychology"
-            ],
-            "MARKETING": [
-                "Digital Marketing & Strategy", "Brand Management", "Sales & Marketing"
             ]
         };
 
         let countriesData = [];
-        let coursesData = [];
 
         /* ── Helpers ── */
         function clearSelect(sel, placeholder) {
@@ -728,51 +725,12 @@
             }
         });
 
-        function getSchoolForCourse(courseName) {
-            courseName = courseName.toUpperCase();
-            if (courseName.includes("BTECH") || courseName.includes("MTECH") || courseName.includes("BCA") || courseName.includes("MCA") || courseName.includes("DIPLOMA")) {
-                return "SCHOOL OF ENGINEERING & TECHNOLOGY";
-            }
-            if (courseName.includes("LLB") || courseName.includes("LAW") || courseName.includes("LLM")) {
-                return "SCHOOL OF LAW";
-            }
-            if (courseName.includes("PHARM") || courseName.includes("PHARMA")) {
-                return "SCHOOL OF PHARMACY";
-            }
-            if (courseName.includes("AGRI") || courseName.includes("AGRICULTURE")) {
-                return "SCHOOL OF AGRICULTURAL SCIENCES";
-            }
-            if (courseName.includes("MBA") || courseName.includes("BBA") || courseName.includes("B.COM") || courseName.includes("M.COM") || courseName.includes("COMMERCE") || courseName.includes("MANAGEMENT")) {
-                return "ALABBAR SCHOOL OF MANAGEMENT";
-            }
-            if (courseName.includes("B.SC") || courseName.includes("M.SC") || courseName.includes("PHYSICS") || courseName.includes("CHEMISTRY") || courseName.includes("ZOOLOGY") || courseName.includes("BOTANY") || courseName.includes("MATHEMATICS")) {
-                return "SCHOOL OF BASIC& APPLIED SCIENCES";
-            }
-            if (courseName.includes("B.A") || courseName.includes("M.A") || courseName.includes("ENGLISH") || courseName.includes("ECONOMICS") || courseName.includes("SOCIOLOGY") || courseName.includes("POLITICAL")) {
-                return "SCHOOL OF HUMINITIES & SOCIAL SCIENCES";
-            }
-            return "";
-        }
-
         schoolSelect.addEventListener('change', e => {
             const school = e.target.value;
             clearSelect(courseSelect, 'Select Course');
-
-            let filteredCourses = [];
-            if (school && coursesData && coursesData.length > 0) {
-                filteredCourses = coursesData.filter(item => {
-                    return getSchoolForCourse(item.course) === school;
-                }).map(item => item.course);
-            }
-
-            // Fallback to static mapping if no matching courses found in API
-            if (filteredCourses.length === 0 && school && schoolCoursesMap[school]) {
-                filteredCourses = schoolCoursesMap[school];
-            }
-
-            if (filteredCourses.length > 0) {
+            if (school && schoolCoursesMap[school]) {
                 courseSelect.disabled = false;
-                filteredCourses.forEach(course => {
+                schoolCoursesMap[school].forEach(course => {
                     const option = document.createElement('option');
                     option.value = course;
                     option.textContent = course;
@@ -784,48 +742,7 @@
             }
         });
 
-        async function fetchSchools() {
-            try {
-                const response = await fetch('https://api.rafunirp.com/api/department/name');
-                if (response.ok) {
-                    const json = await response.json();
-                    if (json.success && Array.isArray(json.data)) {
-                        const currentVal = schoolSelect.value;
-                        clearSelect(schoolSelect, 'Select School');
-                        json.data.forEach(item => {
-                            const option = document.createElement('option');
-                            option.value = item.department;
-                            option.textContent = item.department;
-                            schoolSelect.appendChild(option);
-                        });
-                        if (currentVal) {
-                            schoolSelect.value = currentVal;
-                            schoolSelect.dispatchEvent(new Event("change"));
-                        }
-                    }
-                }
-            } catch (error) {
-                console.error("Error fetching schools:", error);
-            }
-        }
-
-        async function fetchCourses() {
-            try {
-                const response = await fetch('https://api.rafunirp.com/api/course/name');
-                if (response.ok) {
-                    const json = await response.json();
-                    if (json.success && Array.isArray(json.data)) {
-                        coursesData = json.data;
-                    }
-                }
-            } catch (error) {
-                console.error("Error fetching courses:", error);
-            }
-        }
-
         fetchCountriesAndStates();
-        fetchSchools();
-        fetchCourses();
 
         /* ── Populate Year Dropdowns ── */
         function populateYears() {
@@ -841,6 +758,143 @@
             });
         }
         populateYears();
+
+        /* ── Capture Referral Reference from URL ── */
+        function getReferenceFromUrl() {
+            // 1. Check query parameters (?ref=XYZ, ?reference=XYZ, ?counselor=XYZ)
+            const urlParams = new URLSearchParams(window.location.search);
+            let ref = urlParams.get('ref') || urlParams.get('reference') || urlParams.get('counselor');
+            if (ref) return ref.trim();
+
+            // 2. Check path variable (e.g. /index.html/XYZ or /ref/XYZ or /XYZ)
+            const pathParts = window.location.pathname.split('/').filter(p => p && p !== 'index.html' && p !== 'ref');
+            if (pathParts.length > 0) {
+                return decodeURIComponent(pathParts[pathParts.length - 1]).trim();
+            }
+
+            // 3. Check hash (#XYZ or #ref=XYZ)
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                if (hash.includes('=')) {
+                    const hashParams = new URLSearchParams(hash);
+                    let href = hashParams.get('ref') || hashParams.get('reference');
+                    if (href) return href.trim();
+                } else {
+                    return decodeURIComponent(hash).trim();
+                }
+            }
+            return null;
+        }
+
+        /* ── Auto-Resume Registration Status Check ── */
+        window.addEventListener('DOMContentLoaded', async () => {
+            // Extract and store reference if present in URL
+            const refFromUrl = getReferenceFromUrl();
+            if (refFromUrl) {
+                // CLEAR old session if a new referral link is clicked!
+                localStorage.removeItem('registrationId');
+                localStorage.removeItem('registrationToken');
+                localStorage.setItem('registrationReference', refFromUrl);
+            }
+
+            // Pre-fill and show reference field if available
+            const storedReference = localStorage.getItem('registrationReference');
+            const refField = document.getElementById('reference-field');
+            const refInput = document.getElementById('reference');
+            if (storedReference && refField && refInput) {
+                refInput.value = storedReference;
+                refField.style.display = 'block';
+            }
+
+            // ── Extract registrationId and token from URL query parameters ──
+            const urlQuery = new URLSearchParams(window.location.search);
+            const queryRegId = urlQuery.get('registrationId');
+            const queryToken = urlQuery.get('token');
+
+            if (queryRegId && queryToken) {
+                localStorage.setItem('registrationId', queryRegId);
+                localStorage.setItem('registrationToken', queryToken);
+            }
+
+            const registrationId = queryRegId || localStorage.getItem('registrationId');
+            const token = queryToken || localStorage.getItem('registrationToken');
+            console.log("Auto-resume trigger. registrationId:", registrationId, "token length:", token ? token.length : 0);
+
+            if (registrationId && token) {
+                try {
+                    const response = await fetch(`http://localhost:8080/api/register/status/${registrationId}`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    console.log("Status API Response status:", response.status, response.statusText);
+
+                    if (response.ok) {
+                        const student = await response.json();
+                        console.log("Fetched student details:", student);
+
+                        if (student) {
+                            // Prefill Step 1 fields
+                            if (document.getElementById('student_name')) document.getElementById('student_name').value = student.fullName || '';
+                            if (document.getElementById('mobile')) document.getElementById('mobileernumber') ? document.getElementById('mobileernumber').value = student.mobileNumber || '' : (document.getElementById('mobile') ? document.getElementById('mobile').value = student.mobileNumber || '' : null);
+                            if (document.getElementById('email')) document.getElementById('email').value = student.email || '';
+                            
+                            console.log("Checking progress. registrationStep:", student.registrationStep, "paymentStatus:", student.paymentStatus);
+
+                            // Check registration step
+                            if (student.registrationStep === 'COMPLETED' || student.registrationCompleted) {
+                                console.log("Routing to Success Screen");
+                                showSuccessScreen();
+                            } else if (student.paymentStatus === 'SUCCESS') {
+                                if (student.fatherName && student.motherName) {
+                                    console.log("Routing to Step 3 (Marksheets)");
+                                    goToStep(3);
+                                } else {
+                                    console.log("Routing to Step 2 (Family Details)");
+                                    goToStep(2);
+                                }
+                            } else {
+                                console.log("Student has not completed payment yet. Staying on Step 1.");
+                            }
+                        }
+                    } else {
+                        const errMsg = await response.text();
+                        console.error("Failed to fetch registration status:", response.status, errMsg);
+                        
+                        if (response.status === 401 || response.status === 403) {
+                            console.log("Token expired or unauthorized. Clearing session to let user start fresh.");
+                            localStorage.removeItem('registrationId');
+                            localStorage.removeItem('registrationToken');
+                        } else {
+                            alert("Error: Registration status API returned " + response.status + "\nDetails: " + errMsg);
+                        }
+                    }
+                } catch (error) {
+                    console.error('Network Error checking registration status:', error);
+                    alert("Network Error checking registration status: " + error.message);
+                }
+            } else {
+                console.log("No active registration session found in localStorage.");
+            }
+        });
+
+        function showSuccessScreen() {
+            /* Hide all panels, show success */
+            document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+
+            /* Mark all steps completed */
+            document.querySelectorAll('.step-item').forEach(item => {
+                item.classList.remove('active');
+                item.classList.add('completed');
+            });
+            document.querySelectorAll('.step-connector').forEach(conn => {
+                conn.classList.add('completed');
+            });
+
+            document.getElementById('success-screen').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
         /* ══════════════════════════════════════════════ */
         /*  MULTI-STEP NAVIGATION                        */
@@ -875,28 +929,128 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        async function initiateEasebuzzPayment(registrationId) {
+            const payload = { registrationId };
+            if (refParam) {
+                payload.ref = refParam;
+            }
+            const response = await fetch('http://localhost:8080/api/payment/create-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                const errResult = await response.json().catch(() => ({}));
+                throw new Error(errResult.message || 'Failed to create payment order');
+            }
+
+            const result = await response.json();
+            if (!result.success) {
+                throw new Error(result.message || 'Payment order creation failed');
+            }
+
+            const paymentParams = result.data || result;
+            if (paymentParams.checkoutUrl) {
+                window.location.href = paymentParams.checkoutUrl;
+            } else if (paymentParams.accessKey) {
+                window.location.href = `https://testpay.easebuzz.in/pay/${paymentParams.accessKey}`;
+            } else {
+                throw new Error('No checkout URL or access key received from payment server.');
+            }
+        }
+
         /* Step 1 → 2 */
-        document.getElementById('btn-step1-next').addEventListener('click', () => {
+        document.getElementById('btn-step1-next').addEventListener('click', async () => {
             /* Basic validation for Step 1 */
             const name = document.getElementById('student_name').value.trim();
             const mobile = document.getElementById('mobile').value.trim();
             const email = document.getElementById('email').value.trim();
+            const discipline = document.getElementById('discipline').value.trim();
+            const school = document.getElementById('school-select').value.trim();
+            const course = document.getElementById('course-select').value.trim();
+            const country = document.getElementById('country-select').value.trim();
+            const state = document.getElementById('state-select').value.trim();
+            const city = document.getElementById('city-select').value.trim();
             const terms = document.getElementById('terms-check').checked;
 
-            if (!name || !mobile || !email) {
+            if (!name || !mobile || !email || !discipline || !school || !course || !country || !state || !city) {
                 highlightEmpty('step-1');
-                alert('Please fill in all required fields (Name, Mobile, Email).');
+                alert('Please fill in all required fields.');
                 return;
             }
             if (!terms) {
                 alert('Please agree to the Terms and Conditions.');
                 return;
             }
-            goToStep(2);
+
+            /* POST registration details */
+            try {
+                const registrationPayload = {
+                    fullName: name,
+                    mobileNumber: mobile,
+                    email: email,
+                    discipline: discipline,
+                    school: school,
+                    course: course,
+                    country: country,
+                    state: state,
+                    city: city
+                };
+                const referenceInput = document.getElementById('reference');
+                if (referenceInput && referenceInput.value.trim()) {
+                    registrationPayload.reference = referenceInput.value.trim();
+                }
+                const response = await fetch('http://localhost:8080/api/register/basic', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(registrationPayload)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    const respData = data && data.data ? data.data : {};
+                    const registrationId = respData.registrationId || respData.registrationID || '';
+                    const token = respData.token || '';
+                    const nextStep = respData.nextStep || '';
+                    const amount = respData.amount || 1.00;
+
+                    try {
+                        localStorage.setItem('registrationId', registrationId);
+                        localStorage.setItem('registrationToken', token);
+                    } catch (e) {
+                        console.warn('Could not save registration data to localStorage', e);
+                    }
+
+                    if (nextStep === 'PAYMENT') {
+                        alert((data.message ? data.message + '. ' : '') + 'Redirecting to payment.');
+                        await initiateEasebuzzPayment(registrationId);
+                        return;
+                    }
+
+                    goToStep(2);
+                } else if (response.status === 409) {
+                    alert('Conflict: This email or mobile number is already registered. Please use a different email or mobile number.');
+                } else if (response.status === 400) {
+                    alert('Validation Error: ' + (data.message || 'Please check your input and try again.'));
+                } else if (response.status === 500) {
+                    alert('Server Error: Please try again later.');
+                } else {
+                    alert('Error: ' + (data.message || 'Failed to register. Please try again.'));
+                }
+            } catch (error) {
+                console.error('Registration error:', error);
+                alert('Connection error: Unable to reach the server. Please check your connection.');
+            }
         });
 
         /* Step 2 → 3 */
-        document.getElementById('btn-step2-next').addEventListener('click', () => {
+        document.getElementById('btn-step2-next').addEventListener('click', async () => {
             const fatherName = document.getElementById('father_name').value.trim();
             const motherName = document.getElementById('mother_name').value.trim();
             if (!fatherName || !motherName) {
@@ -904,7 +1058,55 @@
                 alert('Please fill in Father\'s Name and Mother\'s Name.');
                 return;
             }
-            goToStep(3);
+
+            const registrationId = localStorage.getItem('registrationId');
+            const token = localStorage.getItem('registrationToken');
+
+            if (registrationId && token) {
+                const btn = document.getElementById('btn-step2-next');
+                const originalText = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = 'Saving...';
+
+                try {
+                    const corrAddress = document.getElementById('correspondence_address').value.trim();
+                    const fatherMobile = document.getElementById('father_mobile').value.trim() || '9876543210';
+                    const guardianMobile = document.getElementById('guardian_mobile').value.trim() || fatherMobile;
+
+                    const response = await fetch(`http://localhost:8080/api/register/family/${registrationId}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({
+                            fatherName: fatherName,
+                            fatherOccupation: 'Business',
+                            motherName: motherName,
+                            motherOccupation: 'Homemaker',
+                            guardianMobile: guardianMobile,
+                            annualIncome: '500000',
+                            address: corrAddress || 'Not Provided',
+                            pincode: '301705'
+                        })
+                    });
+
+                    if (!response.ok) {
+                        const errData = await response.json();
+                        throw new Error(errData.message || 'Failed to save family details');
+                    }
+
+                    goToStep(3);
+                } catch (error) {
+                    console.error('Error saving family details:', error);
+                    alert('Error saving details: ' + error.message);
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = originalText;
+                }
+            } else {
+                goToStep(3);
+            }
         });
 
         /* Step 2 ← 1 */
@@ -914,21 +1116,55 @@
         document.getElementById('btn-step3-back').addEventListener('click', () => goToStep(2));
 
         /* Submit */
-        document.getElementById('btn-submit').addEventListener('click', () => {
-            /* Hide all panels, show success */
-            document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('btn-submit').addEventListener('click', async () => {
+            const photoFile = document.getElementById('passport_photo').files[0];
+            const tenthFile = document.getElementById('marksheet_10').files[0];
+            const twelfthFile = document.getElementById('marksheet_12').files[0];
 
-            /* Mark all steps completed */
-            document.querySelectorAll('.step-item').forEach(item => {
-                item.classList.remove('active');
-                item.classList.add('completed');
-            });
-            document.querySelectorAll('.step-connector').forEach(conn => {
-                conn.classList.add('completed');
-            });
+            if (!photoFile || !tenthFile || !twelfthFile) {
+                alert('Please upload all required documents (Passport Photo, 10th Marksheet, and 12th Marksheet).');
+                return;
+            }
 
-            document.getElementById('success-screen').classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const registrationId = localStorage.getItem('registrationId');
+            const token = localStorage.getItem('registrationToken');
+
+            if (registrationId && token) {
+                const btn = document.getElementById('btn-submit');
+                const originalText = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = 'Uploading...';
+
+                try {
+                    const formData = new FormData();
+                    formData.append('passportPhoto', photoFile);
+                    formData.append('tenthMarksheet', tenthFile);
+                    formData.append('twelfthMarksheet', twelfthFile);
+
+                    const response = await fetch(`http://localhost:8080/api/register/documents/${registrationId}`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        const errData = await response.json();
+                        throw new Error(errData.message || 'Failed to submit documents');
+                    }
+
+                    showSuccessScreen();
+                } catch (error) {
+                    console.error('Error submitting application:', error);
+                    alert('Error submitting application: ' + error.message);
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = originalText;
+                }
+            } else {
+                showSuccessScreen();
+            }
         });
 
         /* Highlight empty required fields */
@@ -1042,30 +1278,6 @@
                 this.value = formatted;
             });
         });
-
-        /* ── Integration Form Selector ── */
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const formIframe = document.getElementById('form-iframe');
-
-        if (tabBtns && formIframe) {
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    const val = btn.dataset.value;
-                    if (val === 'instagram') {
-                        formIframe.src = './instagram.html';
-                    } else if (val === 'google') {
-                        formIframe.src = './google.html';
-                    } else if (val === 'facebook') {
-                        formIframe.src = './facebook.html';
-                    } else if (val === 'website') {
-                        formIframe.src = './website.html';
-                    }
-                });
-            });
-        }
     </script>
 </body>
 

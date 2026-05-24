@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Payment Successful — Raffles University</title>
+    <link rel="stylesheet" href="registration-form.css" />
+</head>
+<body>
+    <main class="container">
+        <div class="success-screen active">
+            <div class="success-checkmark">✓</div>
+            <h2>Payment Successful!</h2>
+            <p>Your payment has been verified. Thank you for completing the transaction.</p>
+            <p id="payment-info"></p>
+            <button type="button" class="btn btn-primary" id="continue-btn">Continue Application</button>
+        </div>
+    </main>
+    <script>
+        // Extract registrationId and token from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlRegId = urlParams.get('registrationId');
+        const urlToken = urlParams.get('token');
+
+        if (urlRegId && urlToken) {
+            localStorage.setItem('registrationId', urlRegId);
+            localStorage.setItem('registrationToken', urlToken);
+        }
+
+        const registrationId = urlRegId || localStorage.getItem('registrationId');
+        const token = urlToken || localStorage.getItem('registrationToken');
+        const info = document.getElementById('payment-info');
+
+        if (registrationId) {
+            info.textContent = 'Registration ID: ' + registrationId;
+        } else {
+            info.textContent = 'Unable to retrieve registration details from this browser session.';
+        }
+
+        document.getElementById('continue-btn').addEventListener('click', () => {
+            if (registrationId && token) {
+                window.location.href = `index.html?registrationId=${registrationId}&token=${token}`;
+            } else {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
