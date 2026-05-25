@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Application Form — Raffles University</title>
     <meta name="description" content="Student Registration Application Form for Raffles University. Apply for UG, PG, PhD, and Diploma programs.">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/formofcrm/forms/registration-form/registration-style.css" />
-=======
+
 
     <link rel="stylesheet" href="registration-style.css" />
 
->>>>>>> 9951f888dbc159dfe10859c4631be205d2d0ce50
+
 </head>
 
 <body>
@@ -816,6 +814,12 @@
             const urlQuery = new URLSearchParams(window.location.search);
             const queryRegId = urlQuery.get('registrationId');
             const queryToken = urlQuery.get('token');
+            const requestedStep = parseInt(urlQuery.get('step') || '', 10);
+            const hasRequestedStep = Number.isInteger(requestedStep) && requestedStep >= 1 && requestedStep <= totalSteps;
+
+            if (hasRequestedStep) {
+                goToStep(requestedStep);
+            }
 
             if (queryRegId && queryToken) {
                 localStorage.setItem('registrationId', queryRegId);
@@ -848,8 +852,9 @@
                             
                             console.log("Checking progress. registrationStep:", student.registrationStep, "paymentStatus:", student.paymentStatus);
 
-                            // Check registration step
-                            if (student.registrationStep === 'COMPLETED' || student.registrationCompleted) {
+                            if (hasRequestedStep) {
+                                goToStep(requestedStep);
+                            } else if (student.registrationStep === 'COMPLETED' || student.registrationCompleted) {
                                 console.log("Routing to Success Screen");
                                 showSuccessScreen();
                             } else if (student.paymentStatus === 'SUCCESS') {

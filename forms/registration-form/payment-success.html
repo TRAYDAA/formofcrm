@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Payment Successful — Raffles University</title>
-    <link rel="stylesheet" href="registration-form.css" />
+    <link rel="stylesheet" href="registration-style.css" />
 </head>
 <body>
     <main class="container">
@@ -39,9 +39,9 @@
 
         document.getElementById('continue-btn').addEventListener('click', () => {
             if (registrationId && token) {
-                window.location.href = `index.html?registrationId=${registrationId}&token=${token}`;
+                window.location.href = `index.html?registrationId=${registrationId}&token=${token}&step=2`;
             } else {
-                window.location.href = 'index.html';
+                info.textContent = 'You are notregistered.';
             }
         });
     </script>
