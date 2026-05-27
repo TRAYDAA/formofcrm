@@ -22,9 +22,11 @@
         const urlRegId = urlParams.get('registrationId');
         const urlToken = urlParams.get('token');
 
-        if (urlRegId && urlToken) {
+        if (urlRegId) {
             localStorage.setItem('registrationId', urlRegId);
-            localStorage.setItem('registrationToken', urlToken);
+            if (urlToken) {
+                localStorage.setItem('registrationToken', urlToken);
+            }
         }
 
         const registrationId = urlRegId || localStorage.getItem('registrationId');
@@ -38,10 +40,11 @@
         }
 
         document.getElementById('continue-btn').addEventListener('click', () => {
-            if (registrationId && token) {
-                window.location.href = `index.html?registrationId=${registrationId}&token=${token}&step=2`;
+            if (registrationId) {
+                const tokenParam = token ? `&token=${token}` : '';
+                window.location.href = `index.html?registrationId=${registrationId}${tokenParam}&step=2`;
             } else {
-                info.textContent = 'You are notregistered.';
+                info.textContent = 'Unable to continue. Active registration session not found.';
             }
         });
     </script>
