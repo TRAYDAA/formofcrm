@@ -8,29 +8,33 @@
 </head>
 <body>
     <main class="container">
-        <div class="success-screen active">
-            <div class="success-checkmark">✓</div>
-            <h2>Payment Successful!</h2>
-            <p>Your payment has been verified. Thank you for completing the transaction.</p>
-            <p id="payment-info"></p>
-            <button type="button" class="btn btn-primary" id="continue-btn">Continue Application</button>
+        <!-- Brand Header -->
+        <header class="brand">
+            <img src="logo.png" alt="Raffles University logo" class="logo">
+            <h1 class="form-title">Student Registration Form</h1>
+        </header>
+
+        <!-- Form Card -->
+        <div class="form-card">
+            <div class="success-screen active">
+                <div class="success-checkmark">✓</div>
+                <h2>Payment Successful!</h2>
+                <p>Your payment has been verified. Thank you for completing the transaction.</p>
+                <p id="payment-info" style="margin-top: 16px; font-weight: 600; color: var(--accent); font-family: monospace; font-size: 14px;"></p>
+                <button type="button" class="btn btn-primary" id="continue-btn" style="margin-top: 28px;">Continue Application</button>
+            </div>
         </div>
     </main>
     <script>
-        // Extract registrationId and token from URL parameters
+        // Extract registrationId from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-        const urlRegId = urlParams.get('registrationId');
-        const urlToken = urlParams.get('token');
+        const urlRegId = urlParams.get('registrationId') || urlParams.get('registrationID');
 
         if (urlRegId) {
             localStorage.setItem('registrationId', urlRegId);
-            if (urlToken) {
-                localStorage.setItem('registrationToken', urlToken);
-            }
         }
 
         const registrationId = urlRegId || localStorage.getItem('registrationId');
-        const token = urlToken || localStorage.getItem('registrationToken');
         const info = document.getElementById('payment-info');
 
         if (registrationId) {
@@ -41,8 +45,7 @@
 
         document.getElementById('continue-btn').addEventListener('click', () => {
             if (registrationId) {
-                const tokenParam = token ? `&token=${token}` : '';
-                window.location.href = `index.html?registrationId=${registrationId}${tokenParam}&step=2`;
+                window.location.href = `index.html?registrationId=${registrationId}&step=2`;
             } else {
                 info.textContent = 'Unable to continue. Active registration session not found.';
             }

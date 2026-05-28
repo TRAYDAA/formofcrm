@@ -8,11 +8,20 @@
 </head>
 <body>
     <main class="container">
-        <div class="success-screen active">
-            <div class="success-checkmark">✕</div>
-            <h2>Payment Failed</h2>
-            <p>We could not complete your payment. Please try again or choose another payment method.</p>
-            <button type="button" class="btn btn-primary" id="retry-btn">Retry Payment</button>
+        <!-- Brand Header -->
+        <header class="brand">
+            <img src="logo.png" alt="Raffles University logo" class="logo">
+            <h1 class="form-title">Student Registration Form</h1>
+        </header>
+
+        <!-- Form Card -->
+        <div class="form-card">
+            <div class="success-screen active">
+                <div class="success-checkmark" style="background: linear-gradient(135deg, var(--danger), #f87171); box-shadow: 0 8px 24px rgba(239, 68, 68, 0.3);">✕</div>
+                <h2 style="color: var(--danger);">Payment Failed</h2>
+                <p>We could not complete your payment. Please try again or choose another payment method.</p>
+                <button type="button" class="btn btn-primary" id="retry-btn" style="margin-top: 28px; background: linear-gradient(135deg, var(--danger), #f87171); box-shadow: 0 2px 8px rgba(239, 68, 68, 0.25);">Retry Payment</button>
+            </div>
         </div>
     </main>
     <script>
